@@ -1,0 +1,113 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TestApplication.Models.EmployeeData
+
+@{
+}
+<h1>Create</h1>
+
+<style>
+    .form-group {
+        color: darkblue;
+        font-size: 30px;
+        font-family: Verdana;
+        font-display: auto;
+    }
+
+    .flow-control {
+        font-size: 20px;
+        color: blue;
+        font-family: Rockwell;
+    }
+
+    .card-body {
+        border: solid;
+    }
+
+    .card-header {
+        border: solid;
+        background: border-box;
+        background-color: aqua;
+    }
+
+    .btn-lg {
+        background-color: aqua;
+        color: darkblue;
+        font-size: 20px;
+        border-color: black;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-2">
+            <div class="header">
+                <div class="card-header ">
+                    <h1 class="text-center text-primary">Edit Employee Data</h1>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" asp-action="Edit">
+                            <div class="form-group">
+
+                                <div class="form-group m-1">
+                                    <label asp-for="Name"></label>
+                                    <input type="text" asp-for="Name" class="flow-control" placeholder="Enter Employee Name" />
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    <label asp-for="Gender "></label>
+                                    <input type="text" asp-for="Gender" class="flow-control" placeholder="Enter Employee Gender" />
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    <label asp-for="EmailID"></label>
+                                    <input type="text" asp-for="EmailID" class="flow-control" placeholder="Enter Employee EmailID" />
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    <label asp-for="Dptname"></label>
+                                    <input type="text" asp-for="Dptname" class="flow-control" placeholder="Enter Employee DptName" />
+                                </div>
+
+                                <hr />
+
+                                <div class="form-group">
+                                    <label asp-for="Salary"></label>
+                                    <input type="text" asp-for="Salary" class="flow-control" placeholder="Enter Employee Salary" />
+                                </div>
+
+                                <div class="form-group m-3">
+                                    <input type="submit" value="Submit" class="btn btn-lg btn-success flex-lg-right " onclick="EditSubmitAction()" />
+                                   
+                                </div>
+
+                                <script>
+                                    function EditSubmitAction() {
+                                        alert("Your Record is Updated successfully!...");
+                                    }
+                                </script>
+
+                                
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

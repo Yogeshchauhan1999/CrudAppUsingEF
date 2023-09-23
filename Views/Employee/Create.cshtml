@@ -1,0 +1,145 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TestApplication.Models.EmployeeData
+
+@{
+}
+<h1>Create Employee Data</h1>
+
+<style>
+    .form-group{
+        color:darkblue;
+        font-size:30px;
+        font-family:Verdana;
+        font-display:auto;
+    }
+
+    .flow-control{
+        font-size:20px;
+        color:blue;
+        font-family:Rockwell;
+    }
+
+    .card-body{
+        border:solid;
+        border-radius:12px;
+    }
+
+    .card-header{
+        border:solid;
+        background:border-box;
+        background-color:aqua;
+    }
+
+    .header{
+        border-radius: 12px;
+    }
+
+    .btn-lg{
+        background-color:aqua;
+        color:darkblue;
+        font-size:20px;
+        border-color:black;
+    }
+
+    body{
+        background-color:deepskyblue;
+    }
+
+    h1{
+        color:white;
+        text-align:center;
+        font-size:60px;
+        font-family:Rockwell;
+    }
+    
+    .form-group input{
+        border-radius:8px;
+        width:90%;
+        text-align:center;   
+        justify-content:center;
+        display:flex;
+    }
+    .form-group span{
+        font-size:17px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-2">
+            <div class="header">
+                <div class="card-header ">
+                    <h1 class="text-center text-primary">Add Employee</h1>
+                </div>
+                <div class="card">
+                <div class="card-body">
+                    <h3 class="text-danger text-center">@TempData["error message"]</h3>
+                    <form method="post" asp-action="Create">
+                        <div class="form-group">
+                            
+                        <div class="form-group m-1">
+                            <label asp-for="Name"></label>
+                             <input type="text"  asp-for="Name" class="flow-control" placeholder="Enter Employee Name" />
+                             <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label asp-for="Gender " ></label>
+                             <input type="text"  asp-for="Gender"  class="flow-control" placeholder="Enter Employee Gender" />
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+
+                         </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label asp-for="EmailID"></label>
+                             <input type="text"   asp-for="EmailID" class="flow-control" placeholder="Enter Employee EmailID" />
+                              <span asp-validation-for="EmailID" class="text-danger"></span>
+
+                         </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label asp-for="Dptname"></label>
+                             <input type="text"  asp-for="Dptname" class="flow-control" placeholder="Enter Employee DptName" />
+                             <span asp-validation-for="Dptname" class="text-danger"></span>
+
+                         </div>
+
+                        <hr />
+
+                        <div class="form-group">
+                            <label asp-for="Salary"></label>
+                            <input type="text"  asp-for="Salary"  class="flow-control" placeholder="Enter Employee Salary" />
+                             <span asp-validation-for="Salary" class="text-danger"></span>
+
+                        </div>
+
+                        <div class="form-group m-3">
+                          <input type="submit" value="Submit" class="btn btn-lg btn-success flex-lg-right " onclick="SubmitAction()" />
+
+                        </div>
+
+                               
+                        <script>
+                            function SubmitAction(){
+                               
+                                alert("Your form submitted successfully!...");
+                            }
+                        </script>
+                        
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

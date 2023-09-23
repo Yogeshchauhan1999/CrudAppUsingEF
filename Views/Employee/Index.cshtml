@@ -1,0 +1,92 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<TestApplication.Models.EmployeeData>
+
+@{
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Employee TB Data</title>
+   
+    <style>
+        table{
+            border:solid;
+            color:darkblue;
+        }
+
+        table td{
+            color:darkblue;
+            font-family:Rockwell;
+            font-size:20px;
+        }
+
+        table th{
+            font-size:25px;
+        }
+
+        btn-lg{
+            color:darkblue;
+            background-color:aqua;
+        }
+
+       
+       
+    </style>
+
+</head>
+
+
+<body>
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-0">
+                <h1 class="text-center text-primary">Employee Record</h1>
+                <hr />
+                <br />
+                <br />
+                <a class="btn btn-lg btn-success m-2" asp-controller="Employee" asp-action="Create">Create</a>
+                <table class="table table-bordered">
+                    <tr class="text-center">
+                        <th>EmployeeID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>EmailID</th>
+                        <th>Dptname</th>
+                        <th>Salary</th>
+                        
+                    </tr>
+                    @foreach (var value in Model)
+                    {
+                        <tr class="text-center">
+                            <td>@value.Id</td>
+                            <td>@value.Name</td>
+                            <td>@value.Gender</td>
+                            <td>@value.EmailID</td>
+                            <td>@value.Dptname</td>
+                            <td>@value.Salary</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" asp-controller="Employee" asp-action="Edit"
+                                asp-route-id="@value.Id">Edit</a>
+                                <a class="btn btn-sm btn-danger" asp-controller="Employee" asp-action="Delete"
+                                   asp-route-id="@value.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

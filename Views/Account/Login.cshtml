@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+@model TestApplication.Models.ViewModel.LoginSignupViewModel;
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        form{
+            font-family: 'Poppins', sans-serif;
+            font-size:20px;
+        }
+
+      
+    </style>
+
+</head>
+
+<h1>Login</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-primary pl-5 pr-5 pb-5 pt-3">
+            <div class="text-center">
+                <a class="text-light btn btn-primary font-weight-bold" asp-action="Signup" asp-controller="Account">Sign up</a>
+            </div>
+           <form method="post" asp-action="Login">
+               <div class="form-group">
+               <label asp-for="Username"></label>
+               <input type="text" asp-for="Username" class="form-control" placeholder="Enter username" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input id="password" type="text" asp-for="Password" class="form-control" placeholder="Enter password" autocomplete="off" />
+                    <i id="open" class="fa-solid fa-eye float-end" style="margin-top:-25px;margin-right:6px;cursor:pointer "></i>
+                    <i id="close" class="fa-solid fa-eye-slash float-end" style="margin-top:-25px;margin-right:6px;cursor:pointer;display:none"></i>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="IsRemember"  ></label>
+                    <input type="checkbox" asp-for="IsRemember" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-block btn-primary  m-3 "  value="Log in" />
+                </div>
+           </form>
+           <div class="text-left">
+               <a class="text-primary" asp-action="ForgetUsername">ForgetUsername</a>  <a class="text-primary" asp-action="ForgetPassword">ForgetPassword</a>
+
+           </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#open").click(function(){
+            $("#open").hide();
+            $("#close").show();
+            $("#password").attr("type","text");
+        });
+        $("#close").click(function () {
+            $("#close").hide();
+            $("#open").show();
+            $("#password").attr("type", "password");
+    });
+</script>

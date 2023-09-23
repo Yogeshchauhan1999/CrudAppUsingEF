@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Signup";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+@model TestApplication.Models.ViewModel.LoginSignupViewModel;
+<h1>Signup</h1>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        form {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+
+    </style>
+
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-primary pl-5 pr-5 pb-5 pt-3">
+            <div class="text-center">
+                <h1>USER REGISTRATION FORM</h1>
+            </div>
+            <form method="post" asp-action="Signup">
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input type="text" asp-for="Username" placeholder="Enter username" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input type="text" asp-for="Email" placeholder="Enter Email" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone"></label>
+                    <input type="text" asp-for="Phone" placeholder="Enter phone number" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input type="text" asp-for="Password" placeholder="Enter password" class="form-control" autocomplete="off" />
+                </div>
+               
+
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword"></label>
+                    <input type="text" asp-for="ConfirmPassword" placeholder="Enter confirm password" class="form-control" autocomplete="off" />
+                </div>
+               
+                <div class="form-group">
+                    <input type="submit" class="btn btn-sm btn-success m-2 float-end m-3" value="Registration" />
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
